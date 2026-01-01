@@ -1,0 +1,158 @@
+/* =====================================================
+   Root
+   ===================================================== */
+
+.root {
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-background-color: #ffffff;
+}
+
+
+/* =====================================================
+   Labels
+   ===================================================== */
+
+.header-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.section-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 0 5px 0;
+}
+
+.sub-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #34495e;
+}
+
+.status-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.white-text {
+    -fx-text-fill: white;
+}
+
+
+/* =====================================================
+   Buttons (Base)
+   ===================================================== */
+
+.button {
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-opacity: 0.85;
+}
+
+
+/* =====================================================
+   Button Variants
+   ===================================================== */
+
+.btn-primary {
+    -fx-background-color: #27ae60;   /* Green */
+}
+
+.btn-secondary {
+    -fx-background-color: #2980b9;   /* Blue */
+}
+
+.btn-info {
+    -fx-background-color: #17a2b8;   /* Light Blue */
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;   /* Red */
+}
+
+
+/* =====================================================
+   Layout Containers
+   ===================================================== */
+
+.top-bar {
+    -fx-background-color: #34495e;
+    -fx-padding: 15px;
+    -fx-alignment: center-left;
+}
+
+.bottom-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 8px 15px;
+}
+
+.form-box {
+    -fx-padding: 20px;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+
+/* =====================================================
+   TableView
+   ===================================================== */
+
+.table-view {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+
+/* =====================================================
+   Inputs
+   ===================================================== */
+
+.text-field,
+.text-area,
+.combo-box {
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px 7px 5px 7px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused {
+    -fx-border-color: #2980b9;
+}
+
+
+/* =====================================================
+   ScrollPane
+   ===================================================== */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+
+/* =====================================================
+   Tooltip
+   ===================================================== */
+
+.tooltip {
+    -fx-font-size: 13px;
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-padding: 5px 8px 5px 8px;
+    -fx-background-radius: 4px;
+}

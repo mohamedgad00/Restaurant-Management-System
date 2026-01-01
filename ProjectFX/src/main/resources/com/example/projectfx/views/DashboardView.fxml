@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.projectfx.controller.DashboardController"
+            stylesheets="@../styles/styles.css">
+
+    <top>
+        <!-- ❌ شيلنا padding -->
+        <HBox styleClass="top-bar" spacing="20">
+            <Label text="🏪 Restaurant Dashboard"
+                   styleClass="header-label white-text"/>
+
+            <HBox spacing="10" HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT">
+                <Button text="📋 Orders" onAction="#showOrders" styleClass="btn-secondary"/>
+                <Button text="🍽️ Menu" onAction="#showMenu" styleClass="btn-secondary"/>
+                <Button text="🪑 Tables" onAction="#showTables" styleClass="btn-secondary"/>
+                <Button text="🚪 Logout" onAction="#logout" styleClass="btn-danger"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="contentArea">
+            <VBox alignment="CENTER" spacing="20">
+                <Label text="Welcome to Restaurant Management System"
+                       styleClass="header-label"/>
+
+                <Label fx:id="welcomeLabel"
+                       text="Loading..."
+                       styleClass="sub-label"/>
+            </VBox>
+        </StackPane>
+    </center>
+
+    <bottom>
+
+        <HBox styleClass="bottom-bar">
+            <Label fx:id="statusLabel"
+                   text="Ready"
+                   styleClass="status-label"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

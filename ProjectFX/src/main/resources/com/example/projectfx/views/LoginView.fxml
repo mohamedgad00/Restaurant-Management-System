@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projectfx.controller.LoginController"
+      stylesheets="@../styles/styles.css"
+      alignment="CENTER"
+      spacing="20"
+      styleClass="login-root">
+
+    <!-- App Title -->
+    <Label text="🏪 Restaurant Management System"
+           styleClass="login-title"/>
+
+    <!-- Login Box -->
+    <VBox spacing="15" styleClass="form-box login-box">
+
+        <TextField fx:id="usernameField"
+                   promptText="Username"
+                   styleClass="text-field"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       styleClass="text-field"/>
+
+        <Button text="Login"
+                onAction="#handleLogin"
+                styleClass="btn-primary"/>
+
+        <Label fx:id="errorLabel"
+               visible="false"
+               styleClass="error-label"/>
+    </VBox>
+
+    <!-- Hint -->
+    <Label text="Use: admin / admin123"
+           styleClass="login-hint"/>
+</VBox>

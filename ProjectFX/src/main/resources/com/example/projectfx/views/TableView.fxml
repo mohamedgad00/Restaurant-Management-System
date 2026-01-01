@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projectfx.controller.TableController"
+      spacing="15"
+      style="-fx-padding: 20;"
+      stylesheets="@../styles/styles.css">
+
+    <!-- Header -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="🪑 Table Management" styleClass="header-label"/>
+    </HBox>
+
+    <!-- TableView -->
+    <TableView fx:id="tablesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="tableNumberCol" text="Table #" prefWidth="80"/>
+            <TableColumn fx:id="typeCol" text="Type" prefWidth="120"/>
+            <TableColumn fx:id="capacityCol" text="Capacity" prefWidth="80"/>
+            <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Filters -->
+    <HBox spacing="10">
+        <ComboBox fx:id="statusFilter" promptText="Filter by status" />
+        <Button text="Filter" onAction="#filterTables" styleClass="btn-primary"/>
+    </HBox>
+
+    <!-- Form to add new Table -->
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+        <TextField fx:id="tableNumberField" promptText="Table #" />
+        <ComboBox fx:id="typeField" promptText="Type" />
+        <TextField fx:id="capacityField" promptText="Capacity" />
+        <ComboBox fx:id="statusField" promptText="Status" />
+        <Button text="Add Table" onAction="#addNewTableFromForm" styleClass="btn-primary" />
+    </HBox>
+</VBox>

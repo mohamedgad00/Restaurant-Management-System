@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projectfx.controller.OrderController"
+      spacing="15"
+      style="-fx-padding: 20;"
+      stylesheets="@../styles/styles.css">
+
+    <!-- Header -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="📋 Order Management"
+               styleClass="header-label"/>
+    </HBox>
+
+    <!-- Create Order Form -->
+    <VBox spacing="10" style="-fx-padding: 10;" >
+        <Label text="Create New Order" styleClass="section-label"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Customer:"/>
+            <TextField fx:id="customerField" promptText="Customer Name" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Table:"/>
+            <ComboBox fx:id="tableComboBox" promptText="Select Table" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Item:"/>
+            <ComboBox fx:id="itemComboBox" promptText="Select Item" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="priceField" promptText="Price" editable="false" prefWidth="80"/>
+            <Button text="Add Item" onAction="#handleAddItem"/>
+        </HBox>
+
+        <ListView fx:id="orderItemsList" prefHeight="100"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="Create Order" onAction="#handleCreateOrder" styleClass="btn-primary"/>
+            <Button text="Clear" onAction="#handleRefresh" styleClass="btn-secondary"/>
+        </HBox>
+    </VBox>
+
+    <!-- Orders Table -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label text="All Orders" styleClass="section-label"/>
+
+        <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="orderIdCol" text="Order ID" prefWidth="100"/>
+                <TableColumn fx:id="customerCol" text="Customer" prefWidth="150"/>
+                <TableColumn fx:id="tableCol" text="Table" prefWidth="100"/>
+                <TableColumn fx:id="statusCol" text="Status" prefWidth="120"/>
+                <TableColumn fx:id="totalAmountCol" text="Total Amount" prefWidth="120"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Update Status:"/>
+
+            <ComboBox fx:id="statusCombo" promptText="Select status"/>
+
+            <Button text="Update Status" onAction="#handleUpdateStatus" styleClass="btn-primary"/>
+            <ComboBox fx:id="paymentMethodCombo" promptText="Select Payment Method"/>
+
+            <Button text="Process Payment" onAction="#handleProcessPayment" styleClass="btn-info"/>
+            <Button text="Delete Order" onAction="#handleDeleteOrder" styleClass="btn-danger"/>
+            <Button text="Refresh" onAction="#handleRefresh"/>
+        </HBox>
+    </VBox>
+
+    <Label fx:id="statusLabel" styleClass="status-label" />
+
+</VBox>
