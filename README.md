@@ -77,7 +77,7 @@ projectfx/
 ### Steps
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/restaurant-management-system.git
+git clone https://github.com/mohamedgad00/Restaurant-Management-System.git
 ```
 2. Open in IntelliJ IDEA
 3. Add JavaFX SDK library:
