@@ -3,8 +3,6 @@
 **Restaurant Management System** is a JavaFX-based application designed to manage essential restaurant operations such as **menu management, order processing, table management, user access control, and payment processing**.  
 It is developed in **Java** following the **MVC (Model–View–Controller)** architecture for clean separation of concerns and maintainable code.
 
----
-
 ## 🌟 Features
 - **Menu Management**: Add, remove, and view menu items (Appetizers, Main Courses, Desserts)  
 - **Order Management**: Create, update, and track orders; supports quick order creation with Builder pattern  
@@ -14,15 +12,11 @@ It is developed in **Java** following the **MVC (Model–View–Controller)** ar
 - **Design Patterns**: Singleton, Factory, Builder, Proxy, Adapter  
 - **MVC Architecture**: Clean separation between Model, View, and Controller  
 
----
-
 ## 🏗️ Architecture
 - **Model**: Handles business logic and data (Orders, MenuItems, Tables, Payments)  
 - **View**: JavaFX UI built with FXML + CSS  
-- **Controller**: Handles user interactions and updates models and views  
-
----
-
+- **Controller**: Handles user interactions and updates models and views
+  
 ## 🧩 Design Patterns Used
 | Pattern | Usage |
 |---------|-------|
@@ -32,32 +26,46 @@ It is developed in **Java** following the **MVC (Model–View–Controller)** ar
 | Proxy | Controls access to Dashboard based on user role |
 | Adapter | Integrates multiple payment methods with legacy PaymentSystem |
 
----
-
 ## 📂 Folder Structure
-src/
-├─ main/
-│ ├─ java/
-│ │ ├─ com.example.projectfx
-│ │ │ ├─ model/ # Data classes (Order, MenuItem, Table, etc.)
-│ │ │ ├─ controller/ # Controllers for JavaFX views
-│ │ │ ├─ patterns/ # Design pattern implementations
-│ │ │ └─ Main.java # Entry point
-│ └─ resources/
-│ └─ view/ # FXML files for UI
+```plaintext
+projectfx/
+│
+├── patterns/
+│   ├── singleton/
+│   │   ├── AppDataSingleton.java
+│   │   ├── OrderManager.java
+│   │   ├── PaymentSystem.java
+│   │   └── TableManager.java
+│   │
+│   ├── factory/
+│   │   ├── MenuItemFactory.java
+│   │   └── TableFactory.java
+│   │
+│   ├── builder/
+│   │   └── OrderBuilder.java
+│   │
+│   ├── proxy/
+│   │   ├── Dashboard.java
+│   │   └── DashboardProxy.java
+│   │
+│   └── adapter/
+│       └── PaymentAdapter.java
+│
+├── model/
+│   ├── Order.java
+│   ├── Table.java
+│   ├── Appetizer.java
+│   ├── Dessert.java
+│   ├── MainCourse.java
+│   ├── RegularTable.java
+│   ├── OutdoorTable.java
+│   └── VIPTable.java
+│
+└── ui/
+    ├── controllers/
+    └── views/
+```
 
-
----
-
-## 🖥️ Screenshots
-*(Replace with actual screenshots)*
-- Login Screen  
-- Dashboard (Admin / Manager / Staff)  
-- Menu Management  
-- Order Processing  
-- Table Management  
-
----
 
 ## ⚡ Setup Instructions
 
@@ -70,5 +78,17 @@ src/
 1. Clone the repository:
 ```bash
 git clone https://github.com/your-username/restaurant-management-system.git
+```
+2. Open in IntelliJ IDEA
+3. Add JavaFX SDK library:
+```bash
+File → Project Structure → Libraries → + → Java → select javafx/lib
+```
+4. Set VM Options for Run Configuration:
+```bash
+--module-path "PATH_TO_FX_LIB" --add-modules javafx.controls,javafx.fxml
+```
+5. Run Main.java (extends Application)
+
 
 
